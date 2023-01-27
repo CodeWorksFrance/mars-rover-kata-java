@@ -1,7 +1,8 @@
 package com.technologyconversations.kata.marsrover;
 
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +17,7 @@ public class CoordinatesSpec {
     private List<Obstacle> obstacles;
     private final Direction direction = Direction.NORTH;
 
-    @Before
+    @BeforeEach
     public void beforeCoordinatesTest() {
         x = new Point(1, 99);
         y = new Point(2, 99);

@@ -1,13 +1,15 @@
 package com.technologyconversations.kata.marsrover;
 
-import org.junit.Before;
-import org.junit.Test;
+
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /*
 Source: http://dallashackclub.com/rover
@@ -30,7 +32,7 @@ public class RoverSpec {
     private Point y;
     private List<Obstacle> obstacles;
 
-    @Before
+    @BeforeEach
     public void beforeRoverTest() {
         x = new Point(1, 9);
         y = new Point(2, 9);
@@ -76,9 +78,10 @@ public class RoverSpec {
         assertThat(rover.getCoordinates().getDirection()).isEqualTo(Direction.EAST);
     }
 
-    @Test(expected = Exception.class)
-    public void receiveSingleCommandShouldThrowExceptionWhenCommandIsUnknown() throws Exception {
-        rover.receiveSingleCommand('X');
+    @Test
+
+    public void receiveSingleCommandShouldThrowExceptionWhenCommandIsUnknown() {
+      Assertions.assertThatThrownBy( () -> rover.receiveSingleCommand('X')).isInstanceOf(Exception.class);
     }
 
     @Test

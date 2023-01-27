@@ -1,7 +1,9 @@
 package com.technologyconversations.kata.marsrover;
 
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.*;
 
 /*
@@ -16,7 +18,7 @@ public class PointSpec {
     private final int location = 5;
     private final int maxLocation = 9;
 
-    @Before
+    @BeforeEach
     public void beforePointTest() {
         point = new Point(location, maxLocation);
     }
